@@ -1,0 +1,19 @@
+import * as Actions from './actions';
+import initialState from './initialState';
+import { UserActionType } from '@/types/userActionType';
+
+export const UsersReducer = (
+  state = initialState.user,
+  action: UserActionType
+) => {
+  switch (action.type) {
+    case Actions.SIGN_IN:
+      return {
+        // state を返すのは state が書き換わる際に上書きされるので action から受け取った不足分の値が消えないようにする
+        ...state,
+        ...action.payload,
+      };
+    default:
+      return state;
+  }
+};
