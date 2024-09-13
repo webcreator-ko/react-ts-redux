@@ -1,15 +1,17 @@
 import React from 'react';
-import useTypedSelector from '@/store/selector';
+import { useSelector } from 'react-redux';
+import { selectUserName } from '@/store/user/selectors';
 
 const Home = () => {
-  const user = useTypedSelector((state) => state.users);
+  // const user = useTypedSelector((state) => state.users);
+  const username = useSelector(selectUserName);
 
   return (
     <div>
       Home
       <dl>
         <dt>ログイン情報</dt>
-        <dd>{JSON.stringify(user)}</dd>
+        <dd>{JSON.stringify(username)}</dd>
       </dl>
     </div>
   );

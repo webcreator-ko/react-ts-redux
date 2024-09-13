@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { UsersReducer } from './users/reducers';
+import { UserReducer } from './user/reducers';
 
 const rootReducer = combineReducers({
-  users: UsersReducer, // リデューサーを1回まとめている
+  user: UserReducer, // リデューサーを1回まとめている
 });
 
 export default rootReducer;

@@ -2,7 +2,7 @@ import * as Actions from './actions';
 import initialState from './initialState';
 import { UserActionType } from '@/types/userActionType';
 
-export const UsersReducer = (
+export const UserReducer = (
   state = initialState.user,
   action: UserActionType
 ) => {
