@@ -13,6 +13,10 @@ export const UsersReducer = (
         ...state,
         ...action.payload,
       };
+    case Actions.SIGN_OUT:
+      return {
+        ...initialState.user, // ログアウト時は初期状態に戻す
+      };
     default:
       return state;
   }
