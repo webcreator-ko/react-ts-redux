@@ -1,13 +1,12 @@
 // Redux DevTools 拡張
 // History 型をインポート
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import { thunk } from 'redux-thunk';
 import rootReducer from './reducers';
 
 // ストアの作成
-const store = createStore(
-  rootReducer
-  // applyMiddleware(thunk)
-);
+// @ts-ignore
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export type AppDispatch = typeof store.dispatch; // dispatch の型
 

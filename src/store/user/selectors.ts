@@ -2,22 +2,22 @@ import { createSelector } from 'reselect';
 import { selectUser } from '../selectors';
 
 // UIDだけを選択するセレクター
-export const selectUserUid = createSelector([selectUser], (user) => user.uid);
+export const userIdSelect = createSelector([selectUser], (user) => user.uid);
 
 // 名前だけを選択するセレクター
-export const selectUserName = createSelector(
+export const userNameSelect = createSelector(
   [selectUser],
   (user) => user.username
 );
 
 // サインイン状態だけを選択するセレクター
-export const selectIsSignedIn = createSelector(
+export const SignedInSelect = createSelector(
   [selectUser],
   (user) => user.isSignedIn
 );
 
 // ユーザーのフル情報を取得するセレクター
-// const selectFullUserInfo = createSelector(
+// const fullUserInfoSelect = createSelector(
 //   [selectUser],
 //   (user) => ({
 //     uid: user.uid,

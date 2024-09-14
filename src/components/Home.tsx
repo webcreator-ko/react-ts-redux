@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectUserName } from '@/store/user/selectors';
+import { userNameSelect } from '@/store/user/selectors';
 
 const Home = () => {
   // const user = useTypedSelector((state) => state.users);
-  const username = useSelector(selectUserName);
+  const username = useSelector(userNameSelect);
 
   return (
     <div>
